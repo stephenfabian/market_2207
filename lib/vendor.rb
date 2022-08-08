@@ -1,3 +1,4 @@
+
 class Vendor
   attr_reader :name, :inventory
  
@@ -14,6 +15,17 @@ class Vendor
 
   def stock(item, qty)
     inventory[item] += qty
+  end
+
+   #it through vendors
+  # it htrough venodr inventory
+  # vendor st
+  def potential_revenue
+    total_revenue = []
+    inventory.each do |item|
+      total_revenue << (check_stock(item[0]) * item[0].price)
+    end
+    total_revenue.sum
   end
 
 end

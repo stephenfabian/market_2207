@@ -12,7 +12,9 @@ describe Market do
     expect(market.vendors).to eq([])
   end
 
-  it 'market can add vendors' do
+  it 'market can add vendors, check vendor names, check what vendors sell given item, calc potential revenue' do
+    market = Market.new("South Pearl Street Farmers Market")
+
     vendor1 = Vendor.new("Rocky Mountain Fresh")
     vendor2 = Vendor.new("Ba-Nom-a-Nom")
     vendor3 = Vendor.new("Palisade Peach Shack")
@@ -34,7 +36,14 @@ describe Market do
     market.add_vendor(vendor2)
     market.add_vendor(vendor3)
 
-    expect(market.vendors).to eq(vendor1, vendor2, vendor3)
+    expect(market.vendors).to eq([vendor1, vendor2, vendor3])
+    expect(market.vendor_names).to eq(["Rocky Mountain Fresh", "Ba-Nom-a-Nom", "Palisade Peach Shack"])
+    expect(market.vendors_that_sell(item1)).to eq([vendor1, vendor3])
+
+    expect(vendor1.check_stock(item1)).to eq(35)
+    expect(vendor1.potential_revenue).to eq(29.75)
+    expect(vendor2.potential_revenue).to eq(345.00)
+    expect(vendor3.potential_revenue).to eq(48.75)
   end
 
 end
