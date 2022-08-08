@@ -42,5 +42,7 @@ class Market
     end
     total_invt_hash
   end
+
+  #An item is overstocked if it is sold by more than 1 vendor AND the total quantity is greater than 50.
   
 end
