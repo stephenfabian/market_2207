@@ -73,12 +73,14 @@ describe Market do
     market.add_vendor(vendor3)
 
     expected = { 
-                  item1 => {quanity: 100, vendors: [vendor1, vendor3]},
-                  item2 => {quanity: 7, vendors: [vendor1]},
-                  item3 => {quanity: 35, vendors: [vendor2, vendor3]}
-
+                  item1 => {quantity: 100, vendors: [vendor1, vendor3]},
+                  item2 => {quantity: 7, vendors: [vendor1]},
+                  item4 => {quantity: 50, vendors: [vendor2]},
+                  item3 => {quantity: 35, vendors: [vendor2, vendor3]}
                 }
-  expect(market.total_inventory).to eq()
+               
+    expect(market.total_inventory).to eq(expected)
+    expect(market.total_quantity_item(item1)).to eq(100)
   end
 
 end

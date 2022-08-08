@@ -22,5 +22,5 @@ class Vendor
     end
     total_revenue.sum
   end
-
+  
 end
