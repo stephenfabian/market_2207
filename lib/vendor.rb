@@ -1,4 +1,3 @@
-
 class Vendor
   attr_reader :name, :inventory
  
@@ -22,5 +21,4 @@ class Vendor
     end
     total_revenue.sum
   end
-  
 end
