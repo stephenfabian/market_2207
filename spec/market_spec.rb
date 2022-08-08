@@ -81,7 +81,7 @@ describe Market do
                
     expect(market.total_inventory).to eq(expected)
     expect(market.total_quantity_item(item1)).to eq(100)
-    expect(market.overstocked_items).to eq([])
+    expect(market.overstocked_items).to eq([item1])
   end
 
 end

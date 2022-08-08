@@ -43,6 +43,12 @@ class Market
     total_invt_hash
   end
 
-  #An item is overstocked if it is sold by more than 1 vendor AND the total quantity is greater than 50.
-  
+  def overstocked_items
+    overstocked_array = []
+    total_inventory.each do |item|
+      overstocked_array << item[0] if vendors_that_sell(item[0]).count >= 2 && total_inventory[item[0]][:quantity] > 50
+    end
+    overstocked_array
+  end
+
 end
