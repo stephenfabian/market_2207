@@ -13,6 +13,8 @@ describe Market do
   end
 
   it 'market can add vendors' do
+    market = Market.new("South Pearl Street Farmers Market")
+
     vendor1 = Vendor.new("Rocky Mountain Fresh")
     vendor2 = Vendor.new("Ba-Nom-a-Nom")
     vendor3 = Vendor.new("Palisade Peach Shack")
@@ -34,7 +36,7 @@ describe Market do
     market.add_vendor(vendor2)
     market.add_vendor(vendor3)
 
-    expect(market.vendors).to eq(vendor1, vendor2, vendor3)
+    expect(market.vendors).to eq([vendor1, vendor2, vendor3])
   end
 
 end
