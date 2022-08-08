@@ -21,5 +21,6 @@ class Market
       vendor.check_stock(item) > 0 
     end
   end
-  
+
+ 
 end
