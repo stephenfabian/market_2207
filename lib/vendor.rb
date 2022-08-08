@@ -7,19 +7,14 @@ class Vendor
     @inventory = Hash.new(0)
   end
 
-
   def check_stock(item)
     @inventory[item]
   end
-
 
   def stock(item, qty)
     inventory[item] += qty
   end
 
-   #it through vendors
-  # it htrough venodr inventory
-  # vendor st
   def potential_revenue
     total_revenue = []
     inventory.each do |item|
@@ -27,5 +22,5 @@ class Vendor
     end
     total_revenue.sum
   end
-
+  
 end
